@@ -4,4 +4,4 @@ This documentation is licensed under **[CC BY-ND 4.0](https://creativecommons.or
 
 🗂️ Available in:
 - EN [English License](LICENSE_EN.md)
-- EN [Лицензия на русском](LICENSE_RU.md)
+- RU [Лицензия на русском](LICENSE_RU.md)
