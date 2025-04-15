@@ -20,20 +20,28 @@ Si vous souhaitez modifier l'icône de ce lanceur, vous pouvez utiliser des outi
 
 ---
 
-### Ajout du plugin à votre projet
+### Intégration dans votre projet
 
-Si vous avez acheté le plugin et souhaitez l'intégrer dans votre projet :
+Si vous avez acheté le plugin et souhaitez l'ajouter à votre projet :
 
 Dans le dossier `Resources`, vous trouverez les fichiers suivants :
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> Remarque : le fichier `launch_parameter.txt` peut ne pas exister par défaut — c'est normal. Il contient simplement le paramètre de lancement au format `-dx11`, `-dx12`, `-vulkan`.
+> À noter :  
+>  
+> - Le fichier `launch_parameter.txt` peut être **absent par défaut** — c’est **tout à fait normal**. Il contient le paramètre de lancement sous la forme `-dx11`, `-dx12` ou `-vulkan`.  
+> - **Le fichier doit absolument s'appeler `launch_parameter.txt`**, avec l'extension `.txt`. Si le nom ou l’extension est incorrect, le plugin ne pourra pas l’utiliser — un nouveau fichier avec le bon nom sera alors généré automatiquement au prochain lancement.  
+> - Le fichier `RHI_API_Tools_Launcher.exe` peut avoir **n’importe quel nom**, mais il est **recommandé** de conserver le suffixe `_Launcher.exe` — cela permet aux utilisateurs de l’identifier facilement comme étant le launcher, et non l’exécutable principal.
 
-Vous pouvez définir ce paramètre manuellement en créant ce fichier ou en le copiant depuis le dossier `Resources`.
+Vous pouvez définir à l'avance le paramètre souhaité en créant manuellement le fichier `launch_parameter.txt`, ou en le copiant depuis le dossier `Resources`.
 
-Si votre jeu est empaqueté en mode Shipping, vous devez placer ces fichiers à la racine du jeu, à côté de l'exécutable principal. Le plugin fonctionnera correctement uniquement dans ces conditions.
+Si vous avez empaqueté le jeu en mode **Shipping**, placez ces deux fichiers à côté du fichier `.exe` principal, dans le répertoire racine du jeu — c’est la seule façon pour que le plugin fonctionne correctement.
+
+<p align="center">
+  <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
+</p>
 
 ---
 
@@ -121,7 +129,7 @@ Tous les nœuds se trouvent dans la catégorie **RHI API Tools**
    - Un widget avec l'interface utilisateur du plugin
 
 <p align="center">
-  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
 Ces fichiers sont accessibles directement dans Unreal Engine 5.4 depuis la structure du plugin. Vous pouvez les copier dans votre projet si vous le souhaitez.

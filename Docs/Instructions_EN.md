@@ -18,18 +18,30 @@ These nodes allow players to switch between DirectX 11, DirectX 12, or Vulkan di
 
 If you want to change the icon of the .exe that serves as a launcher, you can use third-party programs for such tasks.
 
-If you have purchased the plugin and want to connect it to your project:
+---
 
-In the plugin folder under `Resources`, you will find files such as:
+### Integrating into Your Project
+
+If you purchased the plugin and want to add it to your project:
+
+In the `Resources` folder, you will find the following files:
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-Note that `launch_parameter.txt` may not be present initially, and that’s completely fine — it only stores the launch parameter like (-dx11, -dx12, -vulkan).
+> Please note:  
+>  
+> - The file `launch_parameter.txt` may be **missing by default** – this is **completely normal**. It stores the launch parameter in the format `-dx11`, `-dx12`, or `-vulkan`.  
+> - **The file must be named exactly `launch_parameter.txt`**, including the `.txt` extension. If the name or extension is incorrect, the plugin will not recognize it — a new file with the correct name will be automatically created on the next launch.  
+> - The file `RHI_API_Tools_Launcher.exe` can have **any name**, but it is **recommended** to keep the `_Launcher.exe` suffix — this helps users easily identify it as the launcher and not the main executable.
 
-So if you want to specify the launch parameter in advance, you can either copy this file from `Resources` or create it yourself and write the desired launch parameter in it.
+You can predefine the desired parameter by creating the `launch_parameter.txt` file manually or copying it from the `Resources` folder.
 
-If your game is packaged in Shipping mode, you must place these files next to the game’s main .exe file, in the root folder of the game. Only then will the plugin work correctly.
+If you've packaged the game in **Shipping** mode, place both files next to the main `.exe` in the root folder of the game — this is the only way for the plugin to function correctly.
+
+<p align="center">
+  <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
+</p>
 
 ---
 
@@ -116,7 +128,7 @@ All nodes are located in the **RHI API Tools** category.
    - A UI widget that clearly shows all plugin features
 
 <p align="center">
-  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
 These files are accessible directly from the Unreal Engine 5.4 editor through the plugin folder. You may also copy or move them to your own project if desired.

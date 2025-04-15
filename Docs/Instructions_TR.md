@@ -20,18 +20,28 @@ Başlatıcı olarak kullanılacak .exe dosyasının simgesini değiştirmek iste
 
 ---
 
-### Eklentiyi Satın Aldıysanız ve Projenize Dahil Etmek İstiyorsanız:
+### Projenize Entegre Etme
 
-`Resources` klasörünün içinde şu dosyaları bulacaksınız:
+Eğer eklentiyi satın aldıysanız ve projenize eklemek istiyorsanız:
+
+`Resources` klasöründe aşağıdaki dosyaları bulacaksınız:
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> ⚠️ `launch_parameter.txt` dosyası varsayılan olarak mevcut olmayabilir — bu normaldir. Bu dosya yalnızca `-dx11`, `-dx12`, `-vulkan` gibi başlatma parametresini içerir.
+> Dikkat:  
+>  
+> - `launch_parameter.txt` dosyası **varsayılan olarak bulunmayabilir** — bu **tamamen normaldir**. Bu dosya, başlatma parametresini `-dx11`, `-dx12` veya `-vulkan` formatında saklar.  
+> - **Dosya adı mutlaka `launch_parameter.txt` olmalıdır**, ve uzantısı `.txt` olarak kalmalıdır. Aksi takdirde eklenti bu dosyayı tanıyamaz — bu durumda, bir sonraki başlatmada doğru isimle yeni bir dosya otomatik olarak oluşturulacaktır.  
+> - `RHI_API_Tools_Launcher.exe` dosyası **istediğiniz isme sahip olabilir**, ancak kullanıcıların bu dosyanın başlatıcı olduğunu daha kolay anlayabilmesi için **`_Launcher.exe` son ekini korumanız önerilir**.
 
-Başlatma parametresini önceden ayarlamak istiyorsanız, bu dosyayı Resources klasöründen kopyalayabilir veya manuel olarak oluşturup içine istediğiniz parametreyi yazabilirsiniz.
+İstenilen başlatma parametresini önceden belirlemek için `launch_parameter.txt` dosyasını elle oluşturabilir veya `Resources` klasöründen kopyalayabilirsiniz.
 
-Oyununuz Shipping formatında paketlendiyse, bu dosyaları oyun kök klasörüne (ana .exe dosyasının yanına) yerleştirmeniz gerekir.
+Oyunu **Shipping** modunda paketlediyseniz, bu iki dosyayı ana `.exe` dosyasının bulunduğu oyun klasörüne yerleştirmeniz gerekir — yalnızca bu şekilde eklenti düzgün çalışacaktır.
+
+<p align="center">
+  <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
+</p>
 
 ---
 
@@ -123,7 +133,7 @@ Tüm düğümler **RHI API Tools** kategorisinde bulunur:
    - Tüm düğüm işlevlerinin örneklerini içeren bir widget
 
 <p align="center">
-  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
 Bu dosyalar doğrudan Unreal Engine 5.4 editöründe açılabilir. İsterseniz proje dosyanıza manuel olarak da kopyalayabilirsiniz.

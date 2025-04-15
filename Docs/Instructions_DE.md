@@ -20,20 +20,28 @@ Wenn du das Symbol des Launchers ändern möchtest, kannst du dafür externe Too
 
 ---
 
-### Plugin zu deinem Projekt hinzufügen
+### Einbindung in Ihr Projekt
 
-Wenn du das Plugin gekauft hast und es in dein Projekt einbinden möchtest:
+Wenn Sie das Plugin gekauft haben und es Ihrem Projekt hinzufügen möchten:
 
-Im Plugin-Ordner `Resources` findest du folgende Dateien:
+Im Ordner `Resources` finden Sie folgende Dateien:
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> Hinweis: Die Datei `launch_parameter.txt` ist möglicherweise nicht vorhanden – das ist normal. Sie enthält nur den Startparameter im Format `-dx11`, `-dx12` oder `-vulkan`.
+> Bitte beachten:  
+>  
+> - Die Datei `launch_parameter.txt` ist möglicherweise standardmäßig **nicht vorhanden** – das ist **vollkommen normal**. Sie speichert den Startparameter im Format `-dx11`, `-dx12`, `-vulkan`.  
+> - **Der Dateiname `launch_parameter.txt` muss exakt so lauten**, inklusive der Endung `.txt`. Andernfalls kann das Plugin die Datei nicht verwenden – in diesem Fall wird beim nächsten Start automatisch eine neue Datei mit dem korrekten Namen erstellt.  
+> - Die Datei `RHI_API_Tools_Launcher.exe` kann **beliebig benannt** werden, es wird jedoch **empfohlen**, den Namenszusatz `_Launcher.exe` beizubehalten – so erkennen Nutzer leichter, dass es sich um den Launcher handelt und nicht um die Hauptanwendung.
 
-Du kannst den Parameter direkt setzen, indem du diese Datei erstellst oder aus dem `Resources`-Ordner kopierst und den gewünschten Startparameter hineinschreibst.
+Sie können den gewünschten Startparameter im Voraus festlegen, indem Sie die Datei `launch_parameter.txt` manuell erstellen oder sie aus dem Ordner `Resources` kopieren.
 
-Wenn dein Spiel im **Shipping**-Modus gepackt wurde, musst du diese Dateien in das Hauptverzeichnis des Spiels neben die .exe-Datei legen. Nur dann funktioniert das Plugin korrekt.
+Wenn Sie das Spiel im **Shipping-Modus** gepackt haben, platzieren Sie beide Dateien im selben Verzeichnis wie die Haupt-`.exe` der Anwendung – nur so kann das Plugin korrekt funktionieren.
+
+<p align="center">
+  <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
+</p>
 
 ---
 
@@ -121,7 +129,7 @@ Alle Nodes befinden sich in der Kategorie **RHI API Tools**:
    - Ein Widget mit der Benutzeroberfläche
 
 <p align="center">
-  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
 Diese Dateien sind direkt im Unreal Engine 5.4 Editor über das Plugin sichtbar. Du kannst sie auch in dein Projekt kopieren, wenn du möchtest.

@@ -20,18 +20,28 @@
 
 ---
 
-### 如果您购买了该插件并准备将其集成到项目中：
+### 集成到您的项目中
 
-插件的 `Resources` 文件夹中包含以下文件：
+如果您已购买插件并希望将其添加到您的项目中：
+
+在 `Resources` 文件夹中，您将找到以下文件：
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> 注意：默认情况下，`launch_parameter.txt` 文件可能不存在，这是正常的。它只是在内部保存启动参数（如 `-dx11`、`-dx12`、`-vulkan`）。
+> 请注意：  
+>  
+> - `launch_parameter.txt` 文件**默认可能不存在** — 这是**完全正常**的。该文件以 `-dx11`、`-dx12` 或 `-vulkan` 的格式存储启动参数。  
+> - **该文件的名称必须严格为 `launch_parameter.txt`**，并且必须包含 `.txt` 扩展名。如果文件名或扩展名不正确，插件将无法识别该文件 — 此时将在下次启动时自动生成一个名称正确的新文件。  
+> - `RHI_API_Tools_Launcher.exe` 文件**可以使用任何名称**，但**建议保留 `_Launcher.exe` 后缀**，这样用户更容易辨认它是启动器而不是主程序。
 
-如果您想立即设置启动参数，可以复制该文件或手动创建，并写入所需的启动参数。
+您可以手动创建 `launch_parameter.txt` 文件，或从 `Resources` 文件夹中复制，以预设所需的启动参数。
 
-若您的游戏是以 Shipping 模式打包的，请将这些文件放置于游戏根目录（与主 .exe 文件同级），以确保插件能够正常运行。
+如果您以 **Shipping 模式** 打包了游戏，请将这两个文件与主 `.exe` 文件一起放在游戏根目录中 — 只有这样插件才能正常工作。
+
+<p align="center">
+  <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
+</p>
 
 ---
 
@@ -119,7 +129,7 @@
    - 一个用于交互的可视化小部件
 
 <p align="center">
-  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
 这些资源可以直接通过 Unreal Engine 5.4 的插件浏览器访问。您也可以根据需求将其复制或迁移到自己的项目中。

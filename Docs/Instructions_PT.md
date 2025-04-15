@@ -20,18 +20,28 @@ Se você quiser alterar o ícone do .exe que funciona como launcher, pode usar p
 
 ---
 
-### Se você comprou o plugin e deseja integrá-lo ao seu projeto:
+### Integração no seu projeto
 
-Na pasta `Resources` do plugin, você encontrará os arquivos:
+Se você adquiriu o plugin e deseja adicioná-lo ao seu projeto:
+
+Na pasta `Resources`, você encontrará os seguintes arquivos:
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> Nota: o arquivo `launch_parameter.txt` pode não estar presente inicialmente — isso é normal. Ele simplesmente armazena o parâmetro de inicialização (-dx11, -dx12, -vulkan).
+> Atenção:  
+>  
+> - O arquivo `launch_parameter.txt` pode estar **ausente por padrão** — isso é **completamente normal**. Ele armazena o parâmetro de inicialização no formato `-dx11`, `-dx12` ou `-vulkan`.  
+> - **O arquivo deve ter exatamente o nome `launch_parameter.txt`**, incluindo a extensão `.txt`. Se o nome ou a extensão estiverem incorretos, o plugin não poderá utilizá-lo — nesse caso, um novo arquivo com o nome correto será criado automaticamente na próxima execução.  
+> - O arquivo `RHI_API_Tools_Launcher.exe` pode ter **qualquer nome**, mas é **recomendado** manter o sufixo `_Launcher.exe` — isso ajuda os usuários a identificar facilmente que se trata do launcher e não do executável principal.
 
-Se quiser definir o parâmetro de inicialização de imediato, você pode copiar esse arquivo de `Resources` ou criá-lo manualmente e inserir o parâmetro desejado.
+Você pode definir previamente o parâmetro desejado criando manualmente o arquivo `launch_parameter.txt` ou copiando-o da pasta `Resources`.
 
-Se seu jogo estiver empacotado em modo Shipping, esses arquivos devem ser colocados na raiz do jogo, ao lado do executável principal. Só assim o plugin funcionará corretamente.
+Se você empacotou o jogo no modo **Shipping**, coloque ambos os arquivos no mesmo diretório do executável principal `.exe` — somente assim o plugin funcionará corretamente.
+
+<p align="center">
+  <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
+</p>
 
 ---
 
@@ -119,7 +129,7 @@ Todos os nós estão localizados na categoria **RHI API Tools**:
    - Um widget com uma demonstração visual das funções
 
 <p align="center">
-  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
 Esses arquivos estão acessíveis diretamente pelo editor do Unreal Engine 5.4. Se desejar, você pode copiá-los para o seu projeto.
