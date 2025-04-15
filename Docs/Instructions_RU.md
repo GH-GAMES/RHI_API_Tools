@@ -31,6 +31,8 @@ launch_parameter.txt
   <img src="../Images/RHI_API_Tools_Category.png" width="512"/> 
 </p>
 
+API
+
 1. RHI API Change нода позволяет выбрать необходимый нам API напрямую из редактора или же упакованной игры в режиме Shipping.
 
 <p align="center">
@@ -47,4 +49,69 @@ launch_parameter.txt
 
 <p align="center">
   <img src="../Images/GET_SUPPORTED_API.png" width="512"/> 
+</p>
+
+VRAM
+
+4. Get Available VRAM - эта нода позволяет узнать сколько видеопамяти у вашей видеокарты доступно (Float)
+
+<p align="center">
+  <img src="../Images/AVAILABLE_VRAM.png" width="512"/> 
+</p>
+
+5. Get Reserved VRAM by Game - эта нода выводит значение о памяти, которая занимается игрой (Float)
+
+<p align="center">
+  <img src="../Images/RESERVED_VRAM_BY_GAME.png" width="512"/> 
+</p>
+
+6. Get Total VRAM - эта нода выводит общее значение памяти, которое поддерживается вашей видеокартой (Float)
+
+<p align="center">
+  <img src="../Images/TOTAL_VRAM.png" width="512"/> 
+</p>
+
+GPU Info
+
+7. RHI Get Current GPU Name - эта нода в формате String выводит полностью модель вашей видеокарты и ее вендор (String)
+
+<p align="center">
+  <img src="../Images/GET_CURRENT_GPU_NAME.png" width="512"/> 
+</p>
+
+8. RHI Get GPU Driver Version - эта нода в формате String выводит версию драйвера вашей видеокарты, при желании можно это легко конвертировать в числовой формат (Sting)
+
+<p align="center">
+  <img src="../Images/GET_GPU_DRIVER_VERSION.png" width="512"/> 
+</p>
+
+9. RHI Get GPU Vendor - эта нода позволяет вывести в формате String имя Вендора вашей видеокарты (String)
+
+
+Теперь немного про структуру плагина:
+
+<p align="center">
+  <img src="../Images/RHI_API_Tools_PLUGIN_CONTENT.png" width="512"/> 
+</p>
+
+1. Внутри самого плагина есть папка Content, внутри которой хранится 2 файла:
+	1. Карта, на которой можно запустить Debug интерфейс
+	2. Виджет, в котором все сделано довольно наглядно
+	
+<p align="center">
+  <img src="../Images/RHI_API_Tools__INSIDE_CONTENT.png" width="512"/> 
+</p>
+
+Эти файлы доступны через сам редактор Unreal Engine 5.4 напрямую из папки плагина, но если есть такое желание, вы можете скопировать или перенести эти файлы именно в ваш проект напрямую.
+
+2. Сам выполнен не слишком сложно, и показывает наглядно каждую функцию данного плагина:
+
+<p align="center">
+  <img src="../Images/INTERFACE_EXAMPLE.png" width="512"/> 
+</p>
+
+3. Внутри виджета есть не только основной код, работающий с самим интерфейсом и функциями плагина, но и еще один Event Graph, где выставлены все ноды из данного плагина:
+
+<p align="center">
+  <img src="../Images/BLUEPRINT_EXAMPLES.png" width="512"/> 
 </p>
