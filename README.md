@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Logo/RHI_API_Tools_ICON_256.png" alt="RHI API Tools Logo" width="128"/>
+  <img src="Logo/RHI_API_Tools_ICON_256.png" alt="RHI API Tools Logo" width="256"/>
 </p>
 
 <h1 align="center">RHI API Tools</h1>
