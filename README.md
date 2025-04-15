@@ -6,8 +6,8 @@
 
 ## 📖 Instruction
 
-- 📘 [English Instruction](docs/Instructions_EN.md) 🇺🇸  
-- 📗 [Русская инструкция](docs/Instructions_RU.md) 🇷🇺
+- 📘 [English Instruction](Docs/Instructions_EN.md) 🇺🇸  
+- 📗 [Русская инструкция](Docs/Instructions_RU.md) 🇷🇺
 
 
 ## 📜 License
@@ -15,5 +15,5 @@
 This documentation is licensed under **[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)**.
 
 🗂️ Available in:
-- EN [English License](LICENSE_EN.md)
-- RU [Лицензия на русском](LICENSE_RU.md)
+- EN [English License](License/LICENSE_EN.md)
+- RU [Лицензия на русском](License/LICENSE_RU.md)
