@@ -4,6 +4,11 @@
 
 <h1 align="center">RHI API Tools</h1>
 
+## 📖 Instruction
+
+- 📘 [English Instruction](docs/Instructions_EN.md) 🇺🇸  
+- 📗 [Русская инструкция](docs/Instructions_RU.md) 🇷🇺
+
 
 ## 📜 License
 
