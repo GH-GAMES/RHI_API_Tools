@@ -1,7 +1,7 @@
 Данный плагин содержит в себе 9 различных нод, которые вы можете увидеть на скриншоте ниже:
 
 <p align="center">
-  <img src="Images/RHI_API_Tools_Nodes_List.png" alt="RHI API Tools V.1.0" width="900"/> 
+  <img src="../Images/RHI_API_Tools_Nodes_List.png" alt="RHI API Tools V.1.0" width="900"/> 
 </p>
 
 <h1 align="center">RHI API Tools</h1>
@@ -28,23 +28,23 @@ launch_parameter.txt
 Все ноды находятся в разделе RHI API Tools
 
 <p align="center">
-  <img src="Images/RHI_API_Tools_Category.png" width="512"/> 
+  <img src="../Images/RHI_API_Tools_Category.png" width="512"/> 
 </p>
 
 1. RHI API Change нода позволяет выбрать необходимый нам API напрямую из редактора или же упакованной игры в режиме Shipping.
 
 <p align="center">
-  <img src="Images/API_CHANGE.png" width="512"/> 
+  <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
 
 2. Get Current API - эта нода позволяет получить результат о нынешнем RHI API, и получает данные вида (DX11, DX12, VULKAN)
 
 <p align="center">
-  <img src="Images/CURRENT_API.png" width="512"/> 
+  <img src="../Images/CURRENT_API.png" width="512"/> 
 </p>
 
 3. Get Supported RHI API - эта нода позволяет получить результат в виде String массива из данных о поддерживаемых API в формате (DX11, DX12, VULKAN)
 
 <p align="center">
-  <img src="Images/GET_SUPPORTED_API.png" width="512"/> 
+  <img src="../Images/GET_SUPPORTED_API.png" width="512"/> 
 </p>
