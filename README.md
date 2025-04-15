@@ -27,6 +27,16 @@ Choose your preferred language to read the documentation:
 
 This documentation is licensed under **[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)**.
 
-🗂️ Available in:
-- EN [English License](License/LICENSE_EN.md)
-- RU [Лицензия на русском](License/LICENSE_RU.md)
+## 🗂️ Available in:
+
+- 🇺🇸 [English License](License/LICENSE_EN.md)
+- 🇷🇺 [Лицензия на русском](License/LICENSE_RU.md)
+- 🇫🇷 [Licence en français](License/LICENSE_FR.md)
+- 🇩🇪 [Lizenz auf Deutsch](License/LICENSE_DE.md)
+- 🇪🇸 [Licencia en español](License/LICENSE_ES.md)
+- 🇵🇹 [Licença em português](License/LICENSE_PT.md)
+- 🇨🇳 [中文许可证](License/LICENSE_ZH.md)
+- 🇯🇵 [日本語のライセンス](License/LICENSE_JP.md)
+- 🇰🇷 [한국어 라이선스](License/LICENSE_KR.md)
+- 🇹🇷 [Türkçe Lisans](License/LICENSE_TR.md)
+

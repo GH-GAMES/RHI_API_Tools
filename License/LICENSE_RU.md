@@ -1,11 +1,11 @@
-## Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
+## Лицензия Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
 
 Авторские права (c) GH Games  
 https://store.steampowered.com/dev/ghgames/
 
 ---
 
-Этот репозиторий содержит **документацию и инструкции по использованию** плагина "RHI API Tools".
+Этот репозиторий содержит **документацию и инструкции по использованию** плагина "RHI API - Tools".
 
 Содержимое распространяется под лицензией **Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)**.
 

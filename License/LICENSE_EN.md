@@ -5,7 +5,7 @@ https://store.steampowered.com/dev/ghgames/
 
 ---
 
-This repository contains **documentation and usage instructions** for the plugin "RHI API Tools".
+This repository contains **documentation and usage instructions** for the plugin "RHI API - Tools".
 
 This content is licensed under the **Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0)**.
 
