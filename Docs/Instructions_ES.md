@@ -1,6 +1,6 @@
-## 🇪🇸 Instrucción para usar el plugin RHI API - Tools
+## 🇪🇸 Guía de Uso del Plugin RHI API - Tools
 
-Este plugin contiene 9 nodos diferentes, que puedes ver en la captura de pantalla a continuación:
+Este plugin contiene 9 nodos diferentes, que puedes ver en la siguiente captura de pantalla:
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_Nodes_List.png" alt="RHI API Tools V.1.0" width="900"/> 
@@ -12,32 +12,32 @@ Este plugin contiene 9 nodos diferentes, que puedes ver en la captura de pantall
   <img src="../Images/RHI_API_Tools_PLUGIN.png" width="900"/> 
 </p>
 
-Este plugin ha sido desarrollado y probado únicamente para Unreal Engine 5.4
+El plugin ha sido desarrollado y probado exclusivamente para Unreal Engine 5.4.
 
-Estos nodos permiten a los jugadores cambiar entre DirectX 11, 12 o Vulkan directamente desde el juego. El plugin guarda el parámetro de inicio en un archivo de texto y permite usar un ejecutable secundario (Launcher) con el sufijo "*_Launcher.exe", que utiliza el mismo icono que puedes ver en la sección de plugins o en la página principal de este repositorio.
+Estos nodos permiten a los jugadores cambiar entre DirectX 11, DirectX 12 y Vulkan directamente desde el juego. El plugin guarda el parámetro de inicio seleccionado en un archivo de configuración de texto y puede utilizar un ejecutable secundario (`*_Launcher.exe`), que actúa como lanzador — tiene el mismo icono que se muestra en la sección del plugin o en la página principal de este repositorio.
 
-Si deseas cambiar el icono del archivo .exe del launcher, puedes utilizar programas externos.
+Si deseas cambiar el icono del lanzador, puedes usar herramientas de terceros.
 
 ---
 
-### Integración en tu proyecto
+### Integración en tu Proyecto
 
-Si has comprado el plugin y quieres añadirlo a tu proyecto:
+Si has adquirido el plugin y deseas añadirlo a tu proyecto:
 
 En la carpeta `Resources` encontrarás los siguientes archivos:
 
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> Ten en cuenta:  
+> Nota:  
 >  
-> - El archivo `launch_parameter.txt` puede estar **ausente por defecto** — esto es **completamente normal**. Este archivo almacena el parámetro de inicio en el formato `-dx11`, `-dx12` o `-vulkan`.  
-> - **El archivo debe llamarse exactamente `launch_parameter.txt`**, incluyendo la extensión `.txt`. Si el nombre o la extensión son incorrectos, el plugin no podrá utilizarlo — en ese caso se generará automáticamente un nuevo archivo con el nombre correcto en el siguiente inicio.  
-> - El archivo `RHI_API_Tools_Launcher.exe` puede tener **cualquier nombre**, pero se **recomienda** mantener el sufijo `_Launcher.exe`, ya que ayuda a los usuarios a distinguirlo fácilmente del ejecutable principal.
+> - El archivo `launch_parameter.txt` puede no estar presente por defecto — esto es **normal**. Guarda el parámetro de inicio en el formato `-dx11`, `-dx12`, `-vulkan`.  
+> - **El nombre del archivo debe ser exactamente `launch_parameter.txt`**, con la extensión `.txt`. Si el nombre o la extensión es diferente, el plugin no podrá utilizarlo — en ese caso, se creará un nuevo archivo con el nombre correcto al próximo inicio.  
+> - El archivo `RHI_API_Tools_Launcher.exe` puede llamarse **como quieras**, pero se **recomienda** mantener el sufijo `_Launcher.exe` para que los usuarios puedan distinguir fácilmente el lanzador del ejecutable principal.
 
-Puedes definir el parámetro de inicio deseado creando manualmente el archivo `launch_parameter.txt` o copiándolo desde la carpeta `Resources`.
+Puedes definir el parámetro necesario de antemano creando el archivo `launch_parameter.txt` manualmente o copiándolo desde `Resources`.
 
-Si has empaquetado el juego en modo **Shipping**, coloca ambos archivos junto al `.exe` principal en la carpeta raíz del juego — solo así el plugin funcionará correctamente.
+Si empaquetas el juego en modo **Shipping**, coloca ambos archivos junto al `.exe` principal en la carpeta raíz del juego — solo así el plugin funcionará correctamente.
 
 <p align="center">
   <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
@@ -45,9 +45,9 @@ Si has empaquetado el juego en modo **Shipping**, coloca ambos archivos junto al
 
 ---
 
-### Nodos del plugin
+### Nodos del Plugin
 
-Todos los nodos se encuentran en la categoría **RHI API Tools**:
+Todos los nodos se encuentran en la categoría **RHI API Tools**.
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_Category.png" width="512"/> 
@@ -57,19 +57,23 @@ Todos los nodos se encuentran en la categoría **RHI API Tools**:
 
 ### API
 
-1. **RHI API Change** – Permite seleccionar el API de renderizado deseado directamente desde el editor o en el juego empaquetado.
+1. **RHI API Change** — permite seleccionar la API RHI deseada directamente desde el editor o en el juego empaquetado.
+
+La cadena "Selected API" devuelve `"DX11"`, `"DX12"` o `"VULKAN"`.
+
+La variable booleana `"Force Use Launcher"` obliga al plugin a usar la configuración sin importar el tipo de empaquetado del juego: Debug, Developing o Publish.
 
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
 
-2. **Get Current API** – Devuelve el API actual utilizado (DX11, DX12, VULKAN)
+2. **Get Current API** — devuelve la API actual (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/CURRENT_API.png" width="512"/> 
 </p>
 
-3. **Get Supported RHI API** – Devuelve un array de strings con los APIs soportados (DX11, DX12, VULKAN)
+3. **Get Supported RHI API** — devuelve un array con las APIs soportadas (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/GET_SUPPORTED_API.png" width="512"/> 
@@ -79,19 +83,19 @@ Todos los nodos se encuentran en la categoría **RHI API Tools**:
 
 ### VRAM
 
-4. **Get Available VRAM** – Muestra cuánta memoria de video está disponible (Float)
+4. **Get Available VRAM** — devuelve la cantidad de memoria de video disponible (`Float`).
 
 <p align="center">
   <img src="../Images/AVAILABLE_VRAM.png" width="512"/> 
 </p>
 
-5. **Get Reserved VRAM by Game** – Devuelve la cantidad de VRAM usada por el juego (Float)
+5. **Get Reserved VRAM by Game** — devuelve la cantidad de memoria de video usada por el juego (`Float`).
 
 <p align="center">
   <img src="../Images/RESERVED_VRAM_BY_GAME.png" width="512"/> 
 </p>
 
-6. **Get Total VRAM** – Muestra la cantidad total de memoria de video soportada por tu GPU (Float)
+6. **Get Total VRAM** — devuelve la cantidad total de memoria de video soportada (`Float`).
 
 <p align="center">
   <img src="../Images/TOTAL_VRAM.png" width="512"/> 
@@ -99,48 +103,82 @@ Todos los nodos se encuentran en la categoría **RHI API Tools**:
 
 ---
 
-### Información de GPU
+### Modo de Inicio de la Aplicación
 
-7. **RHI Get Current GPU Name** – Devuelve el nombre y fabricante completo de la tarjeta gráfica (String)
+7. **RHI Get Current Launch Mode** — proporciona información sobre cómo se inició el juego/proyecto y el modo de compilación del proyecto.
+
+Modos de inicio posibles:
+
+- `"SIMULATION"`
+- `"PLAY_IN_EDITOR"`
+- `"EDITOR"`
+- `"DEDICATED_SERVER"`
+- `"STANDALONE"`
+- `"UNKNOWN"`
+
+Modos de compilación:
+
+- `"SHIPPING"`
+- `"DEVELOPMENT"`
+- `"DEBUG"`
+- `"UNKNOWNBUILD"`
+
+El resultado es una cadena combinada en el formato:
+
+`PLAY_IN_EDITOR_DEVELOPMENT`, `STANDALONE_SHIPPING`, etc.
+
+<p align="center">
+  <img src="../Images/GET_LAUNCH_MODE.png" width="512"/> 
+</p>
+
+---
+
+### Información de la GPU
+
+8. **RHI Get Current GPU Name** — devuelve una cadena con el nombre completo de la tarjeta gráfica y su fabricante (`String`).
 
 <p align="center">
   <img src="../Images/GET_CURRENT_GPU_NAME.png" width="512"/> 
 </p>
 
-8. **RHI Get GPU Driver Version** – Devuelve la versión del controlador de la GPU (String). Puede convertirse fácilmente en formato numérico si es necesario.
+9. **RHI Get GPU Driver Version** — devuelve la versión del controlador de la GPU como cadena (se puede convertir a número si es necesario).
 
 <p align="center">
   <img src="../Images/GET_GPU_DRIVER_VERSION.png" width="512"/> 
 </p>
 
-9. **RHI Get GPU Vendor** – Devuelve el nombre del fabricante de la GPU (String)
+10. **RHI Get GPU Vendor** — devuelve el nombre del fabricante de la GPU (`String`).
+
+<p align="center">
+  <img src="../Images/GET_GPU_VENDOR.png" width="512"/> 
+</p>
 
 ---
 
-### Estructura del plugin
+### Estructura del Plugin
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_PLUGIN_CONTENT.png" width="512"/> 
 </p>
 
-1. Dentro del plugin hay una carpeta llamada `Content`, que contiene dos archivos:
+1. Dentro del plugin hay una carpeta `Content` que contiene:
 
-   - Un mapa con una interfaz de depuración
-   - Un widget con una demostración visual de las funciones
+   - Un mapa de ejemplo con interfaz de depuración
+   - Un widget que muestra todas las funciones del plugin
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
-Estos archivos están disponibles directamente desde el editor de Unreal Engine 5.4. También puedes copiarlos directamente a tu proyecto si lo deseas.
+Estos archivos están disponibles directamente en el editor de UE 5.4 a través de la carpeta del plugin. También puedes copiarlos a tu proyecto si lo deseas.
 
-2. La interfaz no es compleja y muestra claramente todas las funciones del plugin:
+2. La interfaz del plugin es intuitiva y muestra todas las funciones en acción:
 
 <p align="center">
   <img src="../Images/INTERFACE_EXAMPLE.png" width="900"/> 
 </p>
 
-3. Dentro del widget, además del Event Graph principal, hay otro gráfico que contiene todos los nodos del plugin:
+3. Todos los nodos del plugin están colocados en el Event Graph del widget:
 
 <p align="center">
   <img src="../Images/BLUEPRINT_EXAMPLES.png" width="512"/> 
@@ -148,4 +186,4 @@ Estos archivos están disponibles directamente desde el editor de Unreal Engine 
 
 ---
 
-Si tienes dudas o problemas con el plugin, puedes unirte a nuestro canal de Discord: https://discord.gg/Yb9h4XGbWN
+Si tienes preguntas o problemas — únete a nuestro Discord: https://discord.gg/Yb9h4XGbWN

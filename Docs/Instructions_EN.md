@@ -1,4 +1,4 @@
-## 🇺🇸 Instruction for using the RHI API - Tools plugin in English:
+## 🇬🇧 RHI API - Tools Plugin User Guide
 
 This plugin contains 9 different nodes, which you can see in the screenshot below:
 
@@ -12,15 +12,15 @@ This plugin contains 9 different nodes, which you can see in the screenshot belo
   <img src="../Images/RHI_API_Tools_PLUGIN.png" width="900"/> 
 </p>
 
-This plugin was developed and tested exclusively for Unreal Engine 5.4
+The plugin is developed and tested exclusively for Unreal Engine 5.4.
 
-These nodes allow players to switch between DirectX 11, DirectX 12, or Vulkan directly from the game. The plugin saves the selected launch parameter in a text config and also allows using a secondary executable acting as a launcher — it has the suffix "*_Launcher.exe" and the same icon you see in the plugin section or on the main page of this repository.
+These nodes allow players to switch between DirectX 11, DirectX 12, and Vulkan directly from the game. The plugin saves the selected launch parameter in a text config file and can use a secondary executable (`*_Launcher.exe`), which acts as a launcher — it shares the same icon as shown in the plugin section or on the main page of this repository.
 
-If you want to change the icon of the .exe that serves as a launcher, you can use third-party programs for such tasks.
+If you want to change the launcher icon, you can use third-party tools.
 
 ---
 
-### Integrating into Your Project
+### Integration into Your Project
 
 If you purchased the plugin and want to add it to your project:
 
@@ -29,15 +29,15 @@ In the `Resources` folder, you will find the following files:
 - `RHI_API_Tools_Launcher.exe`
 - `launch_parameter.txt`
 
-> Please note:  
+> Note:  
 >  
-> - The file `launch_parameter.txt` may be **missing by default** – this is **completely normal**. It stores the launch parameter in the format `-dx11`, `-dx12`, or `-vulkan`.  
-> - **The file must be named exactly `launch_parameter.txt`**, including the `.txt` extension. If the name or extension is incorrect, the plugin will not recognize it — a new file with the correct name will be automatically created on the next launch.  
-> - The file `RHI_API_Tools_Launcher.exe` can have **any name**, but it is **recommended** to keep the `_Launcher.exe` suffix — this helps users easily identify it as the launcher and not the main executable.
+> - The `launch_parameter.txt` file may be missing by default — this is **normal**. It stores the launch parameter in the format `-dx11`, `-dx12`, `-vulkan`.  
+> - **The file name must be exactly `launch_parameter.txt`**, with the `.txt` extension. If the name or extension differs, the plugin will not be able to use it — in this case, a new file with the correct name will be created on the next launch.  
+> - The `RHI_API_Tools_Launcher.exe` file can be named **anything**, but it is **recommended** to keep the `_Launcher.exe` suffix to make it easier for users to distinguish the launcher from the main executable.
 
-You can predefine the desired parameter by creating the `launch_parameter.txt` file manually or copying it from the `Resources` folder.
+You can predefine the desired parameter by creating the `launch_parameter.txt` manually or copying it from `Resources`.
 
-If you've packaged the game in **Shipping** mode, place both files next to the main `.exe` in the root folder of the game — this is the only way for the plugin to function correctly.
+If you packaged your game in **Shipping** mode, place both files next to the main `.exe` in the root folder — only then will the plugin function correctly.
 
 <p align="center">
   <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
@@ -45,7 +45,7 @@ If you've packaged the game in **Shipping** mode, place both files next to the m
 
 ---
 
-### About the Nodes:
+### Plugin Nodes
 
 All nodes are located in the **RHI API Tools** category.
 
@@ -57,19 +57,23 @@ All nodes are located in the **RHI API Tools** category.
 
 ### API
 
-1. **RHI API Change** — lets you choose the desired API directly from the editor or in a Shipping build.
+1. **RHI API Change** — allows you to select the desired RHI API directly from the editor or in the packaged game.
+
+The "Selected API" string returns `"DX11"`, `"DX12"` or `"VULKAN"`.
+
+The boolean `"Force Use Launcher"` forces the plugin to use the config file regardless of the game's packaging type: Debug, Developing, or Publish.
 
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
 
-2. **Get Current API** — returns the currently used RHI API (DX11, DX12, VULKAN)
+2. **Get Current API** — returns the current API (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/CURRENT_API.png" width="512"/> 
 </p>
 
-3. **Get Supported RHI API** — returns a string array of all supported APIs (DX11, DX12, VULKAN)
+3. **Get Supported RHI API** — returns an array of supported APIs (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/GET_SUPPORTED_API.png" width="512"/> 
@@ -79,19 +83,19 @@ All nodes are located in the **RHI API Tools** category.
 
 ### VRAM
 
-4. **Get Available VRAM** — shows the amount of available GPU memory (Float)
+4. **Get Available VRAM** — returns the amount of available video memory (`Float`).
 
 <p align="center">
   <img src="../Images/AVAILABLE_VRAM.png" width="512"/> 
 </p>
 
-5. **Get Reserved VRAM by Game** — shows how much VRAM is currently used by the game (Float)
+5. **Get Reserved VRAM by Game** — returns the amount of video memory used by the game (`Float`).
 
 <p align="center">
   <img src="../Images/RESERVED_VRAM_BY_GAME.png" width="512"/> 
 </p>
 
-6. **Get Total VRAM** — shows the total amount of memory supported by your GPU (Float)
+6. **Get Total VRAM** — returns the total supported video memory (`Float`).
 
 <p align="center">
   <img src="../Images/TOTAL_VRAM.png" width="512"/> 
@@ -99,21 +103,55 @@ All nodes are located in the **RHI API Tools** category.
 
 ---
 
-### GPU Info
+### Application Launch Mode
 
-7. **RHI Get Current GPU Name** — returns your full GPU model name and vendor (String)
+7. **RHI Get Current Launch Mode** — provides information on how the game/project was launched and indicates the project's build mode.
+
+Possible launch modes:
+
+- `"SIMULATION"`
+- `"PLAY_IN_EDITOR"`
+- `"EDITOR"`
+- `"DEDICATED_SERVER"`
+- `"STANDALONE"`
+- `"UNKNOWN"`
+
+Build modes:
+
+- `"SHIPPING"`
+- `"DEVELOPMENT"`
+- `"DEBUG"`
+- `"UNKNOWNBUILD"`
+
+The node returns a combined string in the format:
+
+`PLAY_IN_EDITOR_DEVELOPMENT`, `STANDALONE_SHIPPING`, etc.
+
+<p align="center">
+  <img src="../Images/GET_LAUNCH_MODE.png" width="512"/> 
+</p>
+
+---
+
+### GPU Information
+
+8. **RHI Get Current GPU Name** — returns a string with the full name of the GPU and its vendor (`String`).
 
 <p align="center">
   <img src="../Images/GET_CURRENT_GPU_NAME.png" width="512"/> 
 </p>
 
-8. **RHI Get GPU Driver Version** — returns the GPU driver version (String). You can easily convert this into a number format if needed.
+9. **RHI Get GPU Driver Version** — returns the GPU driver version as a string (can be converted to a number if needed).
 
 <p align="center">
   <img src="../Images/GET_GPU_DRIVER_VERSION.png" width="512"/> 
 </p>
 
-9. **RHI Get GPU Vendor** — returns the name of your GPU vendor (String)
+10. **RHI Get GPU Vendor** — returns the GPU vendor name (`String`).
+
+<p align="center">
+  <img src="../Images/GET_GPU_VENDOR.png" width="512"/> 
+</p>
 
 ---
 
@@ -123,23 +161,24 @@ All nodes are located in the **RHI API Tools** category.
   <img src="../Images/RHI_API_Tools_PLUGIN_CONTENT.png" width="512"/> 
 </p>
 
-1. Inside the plugin you will find a `Content` folder that includes:
-   - A map where you can run a debug interface
-   - A UI widget that clearly shows all plugin features
+1. Inside the plugin, there is a `Content` folder containing:
+
+   - A sample map with a debug interface
+   - A widget demonstrating all plugin functions
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
 </p>
 
-These files are accessible directly from the Unreal Engine 5.4 editor through the plugin folder. You may also copy or move them to your own project if desired.
+These files are accessible directly in the UE 5.4 editor via the plugin folder. You can also copy them into your project if desired.
 
-2. The interface itself is quite simple and demonstrates each function of the plugin:
+2. The plugin interface is intuitive and showcases all features:
 
 <p align="center">
   <img src="../Images/INTERFACE_EXAMPLE.png" width="900"/> 
 </p>
 
-3. Inside the widget, there is not only the main logic for the interface and plugin functions, but also a separate Event Graph where all the plugin nodes are placed:
+3. All plugin nodes are placed in the widget's Event Graph:
 
 <p align="center">
   <img src="../Images/BLUEPRINT_EXAMPLES.png" width="512"/> 
@@ -147,4 +186,4 @@ These files are accessible directly from the Unreal Engine 5.4 editor through th
 
 ---
 
-If you encounter any issues or have questions, feel free to join our Discord channel: https://discord.gg/Yb9h4XGbWN
+If you have any questions or issues — join our Discord: https://discord.gg/Yb9h4XGbWN
