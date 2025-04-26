@@ -59,21 +59,21 @@
 
 1. **RHI API Change** — позволяет выбрать нужный RHI API прямо из редактора или в упакованной игре.
 
-В String "Selected API" мы можем получить результат в формате "DX11", "DX12" или же "VULKAN"
+В String "Selected API" мы можем получить результат в формате `"DX11"`, `"DX12"` или `"VULKAN"`.
 
-Boolean переменная "Force Use Launcher" позволяет нам принудительно заставить плагин обращаться к конфигу не смотря на то, какой у нас тип упаковки игры, Debug, Developing или же Publish.
+Boolean переменная `"Force Use Launcher"` позволяет нам принудительно заставить плагин обращаться к конфигу несмотря на то, какой у нас тип упаковки игры: Debug, Developing или Publish.
 
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
 
-2. **Get Current API** — возвращает текущий API (DX11, DX12, VULKAN)
+2. **Get Current API** — возвращает текущий API (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/CURRENT_API.png" width="512"/> 
 </p>
 
-3. **Get Supported RHI API** — возвращает массив строк с поддерживаемыми API (DX11, DX12, VULKAN)
+3. **Get Supported RHI API** — возвращает массив строк с поддерживаемыми API (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/GET_SUPPORTED_API.png" width="512"/> 
@@ -83,19 +83,19 @@ Boolean переменная "Force Use Launcher" позволяет нам пр
 
 ### VRAM
 
-4. **Get Available VRAM** — возвращает количество доступной видеопамяти (Float)
+4. **Get Available VRAM** — возвращает количество доступной видеопамяти (`Float`).
 
 <p align="center">
   <img src="../Images/AVAILABLE_VRAM.png" width="512"/> 
 </p>
 
-5. **Get Reserved VRAM by Game** — возвращает количество видеопамяти, занятой игрой (Float)
+5. **Get Reserved VRAM by Game** — возвращает количество видеопамяти, занятой игрой (`Float`).
 
 <p align="center">
   <img src="../Images/RESERVED_VRAM_BY_GAME.png" width="512"/> 
 </p>
 
-6. **Get Total VRAM** — возвращает общее количество поддерживаемой видеопамяти (Float)
+6. **Get Total VRAM** — возвращает общее количество поддерживаемой видеопамяти (`Float`).
 
 <p align="center">
   <img src="../Images/TOTAL_VRAM.png" width="512"/> 
@@ -105,33 +105,53 @@ Boolean переменная "Force Use Launcher" позволяет нам пр
 
 ### Режим запуска приложения
 
-**RHI Get Current GPU Name** — Позволяет получить данные о том, каким образом игра/проект был(а) запущены, и указывает на режим упаковки игры/проекта.
+7. **RHI Get Current Launch Mode** — позволяет получить данные о том, каким образом игра/проект был(а) запущены, а также указывает на режим сборки проекта.
 
-В качестве режима запуска мы можем получить данные в виде "SIMULATION", "PLAY_IN_EDITOR", "EDITOR", "DEDICATED_SERVER", "STANDALONE", "UNKNOWN".
+В качестве режима запуска можно получить значения:
 
-А в качестве информации о том, в каком виде упакована игра/проект, мы получаем данные вида: "SHIPPING", "DEVELOPMENT", "DEBUG", "UNKNOWNBUILD".
+- `"SIMULATION"`
+- `"PLAY_IN_EDITOR"`
+- `"EDITOR"`
+- `"DEDICATED_SERVER"`
+- `"STANDALONE"`
+- `"UNKNOWN"`
 
-Стоит заметить что эти данные являются одной записью из самой ноды "RHI Get Current GPU Name", и вся переменная будет вида: "PLAY_IN_EDITOR_DEVELOPMENT", "STANDALONE_SHIPPING" и так далее.
+Режим сборки возвращает одно из следующих значений:
+
+- `"SHIPPING"`
+- `"DEVELOPMENT"`
+- `"DEBUG"`
+- `"UNKNOWNBUILD"`
+
+Результат работы ноды — это объединённая строка в формате:
+
+`PLAY_IN_EDITOR_DEVELOPMENT`, `STANDALONE_SHIPPING` и т.д.
 
 <p align="center">
   <img src="../Images/GET_LAUNCH_MODE.png" width="512"/> 
 </p>
 
+---
+
 ### Информация о видеокарте
 
-7. **RHI Get Current GPU Name** — возвращает строку с полным названием видеокарты и её вендора (String)
+8. **RHI Get Current GPU Name** — возвращает строку с полным названием видеокарты и её вендора (`String`).
 
 <p align="center">
   <img src="../Images/GET_CURRENT_GPU_NAME.png" width="512"/> 
 </p>
 
-8. **RHI Get GPU Driver Version** — возвращает строку с версией драйвера видеокарты (можно преобразовать в число при необходимости)
+9. **RHI Get GPU Driver Version** — возвращает строку с версией драйвера видеокарты (при необходимости можно преобразовать в число).
 
 <p align="center">
   <img src="../Images/GET_GPU_DRIVER_VERSION.png" width="512"/> 
 </p>
 
-9. **RHI Get GPU Vendor** — возвращает название вендора видеокарты (String)
+10. **RHI Get GPU Vendor** — возвращает название вендора видеокарты (`String`).
+
+<p align="center">
+  <img src="../Images/GET_GPU_VENDOR.png" width="512"/> 
+</p>
 
 ---
 
