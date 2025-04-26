@@ -59,6 +59,10 @@
 
 1. **RHI API Change** — позволяет выбрать нужный RHI API прямо из редактора или в упакованной игре.
 
+В String "Selected API" мы можем получить результат в формате "DX11", "DX12" или же "VULKAN"
+
+Boolean переменная "Force Use Launcher" позволяет нам принудительно заставить плагин обращаться к конфигу не смотря на то, какой у нас тип упаковки игры, Debug, Developing или же Publish.
+
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
@@ -98,6 +102,20 @@
 </p>
 
 ---
+
+### Режим запуска приложения
+
+**RHI Get Current GPU Name** — Позволяет получить данные о том, каким образом игра/проект был(а) запущены, и указывает на режим упаковки игры/проекта.
+
+В качестве режима запуска мы можем получить данные в виде "SIMULATION", "PLAY_IN_EDITOR", "EDITOR", "DEDICATED_SERVER", "STANDALONE", "UNKNOWN".
+
+А в качестве информации о том, в каком виде упакована игра/проект, мы получаем данные вида: "SHIPPING", "DEVELOPMENT", "DEBUG", "UNKNOWNBUILD".
+
+Стоит заметить что эти данные являются одной записью из самой ноды "RHI Get Current GPU Name", и вся переменная будет вида: "PLAY_IN_EDITOR_DEVELOPMENT", "STANDALONE_SHIPPING" и так далее.
+
+<p align="center">
+  <img src="../Images/GET_LAUNCH_MODE.png" width="512"/> 
+</p>
 
 ### Информация о видеокарте
 
