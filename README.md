@@ -8,6 +8,14 @@
   <img src="Images/RHI_API_Tools_PLUGIN.png" width="900"/> 
 </p>
 
+<p align="center">
+  <img src="Images/INTERFACE_EXAMPLE.png" width="900"/> 
+</p>
+
+<p align="center">
+  <img src="Images/RHI_API_Tools_Nodes_List.png" width="900"/> 
+</p>
+
 ## 📖 Instruction
 
 Choose your preferred language to read the documentation:
