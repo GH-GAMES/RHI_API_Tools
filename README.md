@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="Images/INTERFACE_EXAMPLE.png" width="900"/> 
+  <img src="Images/INTERFACE_EXAMPLE.png" width="512"/> 
 </p>
 
 <p align="center">
-  <img src="Images/RHI_API_Tools_Nodes_List.png" width="900"/> 
+  <img src="Images/RHI_API_Tools_Nodes_List.png" width="512"/> 
 </p>
 
 ## 📖 Instruction
