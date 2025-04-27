@@ -1,15 +1,15 @@
 <h1 align="center">RHI API Tools</h1>
 
 <p align="center">
+  <img src="Images/RHI_API_Tools_PLUGIN.png" width="900"/> 
+</p>
+
+<p align="center">
   <img src="Logo/RHI_API_Tools_ICON_256.png" alt="RHI API Tools Logo" width="512"/>
 </p>
 
 <p align="center">
   <img src="Images/RHI_API_Tools_Nodes_List.png" width="512"/> 
-</p>
-
-<p align="center">
-  <img src="Images/RHI_API_Tools_PLUGIN.png" width="900"/> 
 </p>
 
 <p align="center">
