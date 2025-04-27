@@ -1,6 +1,6 @@
 ## 🇹🇷 RHI API - Tools Eklenti Kullanım Kılavuzu
 
-Bu eklenti, aşağıdaki ekran görüntüsünde görebileceğiniz 9 farklı node içerir:
+Bu eklenti, aşağıdaki ekran görüntüsünde görebileceğiniz 9 farklı düğüm (node) içermektedir:
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_Nodes_List.png" alt="RHI API Tools V.1.0" width="900"/> 
@@ -12,32 +12,35 @@ Bu eklenti, aşağıdaki ekran görüntüsünde görebileceğiniz 9 farklı node
   <img src="../Images/RHI_API_Tools_PLUGIN.png" width="900"/> 
 </p>
 
-Eklenti yalnızca Unreal Engine 5.4 için geliştirilmiş ve test edilmiştir.
+Eklenti, yalnızca Unreal Engine 5.4 için geliştirilmiş ve test edilmiştir.
 
-Bu node'lar oyuncuların oyun içerisinden DirectX 11, DirectX 12 ve Vulkan arasında geçiş yapmasına olanak tanır. Eklenti, seçilen başlatma parametresini bir metin konfigürasyon dosyasına kaydeder ve bir başlatıcı olarak çalışan ikinci bir yürütülebilir dosya (`*_Launcher.exe`) kullanabilir. Bu başlatıcı, eklenti bölümünde veya bu depo sayfasında gösterilenle aynı simgeyi taşır.
+Bu düğümler sayesinde oyuncular, oyun içerisinden DirectX 11, DirectX 12 ve Vulkan arasında geçiş yapabilir. Eklenti, seçilen başlatma parametresini bir metin konfigürasyon dosyasına kaydeder ve başlatıcı olarak çalışan ikincil bir yürütülebilir dosya (`*_Launcher.exe`) kullanabilir. Bu dosya, eklenti bölümünde veya bu deposunun ana sayfasında belirtilen aynı simgeyi kullanır.
 
-Başlatıcı simgesini değiştirmek isterseniz, üçüncü taraf araçları kullanabilirsiniz.
+Başlatıcı simgesini değiştirmek isterseniz, üçüncü parti araçlar kullanabilirsiniz.
 
 ---
 
-### Projenize Bağlama
+### Projenize Eklentiyi Ekleme
 
 Eklentiyi satın aldıysanız ve projenize eklemek istiyorsanız:
 
-`Resources` klasöründe şu dosyaları bulacaksınız:
+- **`RHI_API_Tools_Launcher.exe` dosyasını buradan indirebilirsiniz:**
 
-- `RHI_API_Tools_Launcher.exe`
-- `launch_parameter.txt`
+**[RHI_API_Tools_Launcher.exe](https://github.com/GH-GAMES/RHI_API_Tools/blob/main/Launcher/RHI_API_Tools_Launcher.exe)**
+
+- `Resources` klasöründe başlatma parametresi için bir şablon dosya bulunur:
+
+  - `launch_parameter.txt`
 
 > Dikkat:  
 >  
-> - `launch_parameter.txt` dosyası varsayılan olarak bulunmayabilir — bu **normaldir**. Başlatma parametresini `-dx11`, `-dx12`, `-vulkan` formatında saklar.  
-> - **Dosya adı mutlaka `launch_parameter.txt` olmalıdır**, uzantısı dahil. Farklı bir ad veya uzantı kullanılırsa, eklenti bu dosyayı kullanamaz — bu durumda bir sonraki başlatmada doğru isimle yeni bir dosya oluşturulur.  
-> - `RHI_API_Tools_Launcher.exe` dosyasının adı **istediğiniz gibi olabilir**, ancak `_Launcher.exe` ile bitmesi **önerilir**. Böylece kullanıcılar başlatıcıyı ana yürütülebilir dosyadan kolayca ayırt edebilir.
+> - `launch_parameter.txt` dosyası varsayılan olarak bulunmayabilir — bu **normaldir**. Parametreyi şu formatta saklar: `-dx11`, `-dx12`, `-vulkan`.  
+> - **Dosya adı kesinlikle `launch_parameter.txt` olmalıdır**, uzantısı `.txt`. Farklı bir isim veya uzantı kullanılırsa eklenti dosyayı tanımaz ve bir sonraki başlatmada doğru isimle yeni bir dosya oluşturur.  
+> - `RHI_API_Tools_Launcher.exe` dosyasının adı **istediğiniz gibi** olabilir, ancak `_Launcher.exe` son ekini korumanız **tavsiye edilir**. Böylece kullanıcılar başlatıcıyı ana yürütülebilir dosyadan kolayca ayırt edebilir.
 
-Gerekli parametreyi önceden belirlemek için `launch_parameter.txt` dosyasını manuel olarak oluşturabilir veya `Resources` klasöründen kopyalayabilirsiniz.
+Gerekli parametreyi önceden ayarlayabilir veya `Resources` klasöründen kopyalayabilirsiniz.
 
-Oyunu **Shipping** modunda paketlediyseniz, bu iki dosyayı ana `.exe` dosyasının yanına yerleştirin — aksi takdirde eklenti düzgün çalışmaz.
+Oyununuzu **Shipping** modunda paketlediyseniz, bu iki dosyayı oyunun kök dizinindeki ana `.exe` dosyasının yanına yerleştirin — eklenti yalnızca bu şekilde doğru çalışacaktır.
 
 <p align="center">
   <img src="../Images/PLUGIN_EXECUTABLE.png" width="512"/> 
@@ -45,9 +48,9 @@ Oyunu **Shipping** modunda paketlediyseniz, bu iki dosyayı ana `.exe` dosyasın
 
 ---
 
-### Eklenti Node'ları
+### Eklenti Düğümleri
 
-Tüm node'lar **RHI API Tools** kategorisinde bulunur.
+Tüm düğümler **RHI API Tools** kategorisinde bulunur.
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_Category.png" width="512"/> 
@@ -59,9 +62,9 @@ Tüm node'lar **RHI API Tools** kategorisinde bulunur.
 
 1. **RHI API Change** — İstediğiniz RHI API'yi editörden veya paketlenmiş oyundan seçmenizi sağlar.
 
-"Selected API" string'i `"DX11"`, `"DX12"` veya `"VULKAN"` değerini döner.
+"Selected API" string değeri `"DX11"`, `"DX12"` veya `"VULKAN"` olarak döner.
 
-"Force Use Launcher" boolean değişkeni, oyun paketleme türü ne olursa olsun eklentinin konfigürasyon dosyasını kullanmasını zorlar (Debug, Developing veya Publish).
+`"Force Use Launcher"` boolean değişkeni, oyun paketleme türü ne olursa olsun yapılandırma dosyasını kullanmaya zorlar: Debug, Developing veya Publish.
 
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
@@ -73,7 +76,7 @@ Tüm node'lar **RHI API Tools** kategorisinde bulunur.
   <img src="../Images/CURRENT_API.png" width="512"/> 
 </p>
 
-3. **Get Supported RHI API** — Desteklenen API'leri dizi olarak döner (`DX11`, `DX12`, `VULKAN`).
+3. **Get Supported RHI API** — Desteklenen API'lerin listesini döner (`DX11`, `DX12`, `VULKAN`).
 
 <p align="center">
   <img src="../Images/GET_SUPPORTED_API.png" width="512"/> 
@@ -83,19 +86,19 @@ Tüm node'lar **RHI API Tools** kategorisinde bulunur.
 
 ### VRAM
 
-4. **Get Available VRAM** — Kullanılabilir video belleği miktarını döner (`Float`).
+4. **Get Available VRAM** — Kullanılabilir video belleğini döner (`Float`).
 
 <p align="center">
   <img src="../Images/AVAILABLE_VRAM.png" width="512"/> 
 </p>
 
-5. **Get Reserved VRAM by Game** — Oyun tarafından kullanılan video belleği miktarını döner (`Float`).
+5. **Get Reserved VRAM by Game** — Oyun tarafından kullanılan video belleğini döner (`Float`).
 
 <p align="center">
   <img src="../Images/RESERVED_VRAM_BY_GAME.png" width="512"/> 
 </p>
 
-6. **Get Total VRAM** — Toplam desteklenen video belleği miktarını döner (`Float`).
+6. **Get Total VRAM** — Toplam desteklenen video belleğini döner (`Float`).
 
 <p align="center">
   <img src="../Images/TOTAL_VRAM.png" width="512"/> 
@@ -105,7 +108,7 @@ Tüm node'lar **RHI API Tools** kategorisinde bulunur.
 
 ### Uygulama Başlatma Modu
 
-7. **RHI Get Current Launch Mode** — Oyunun/projenin nasıl başlatıldığını ve derleme modunu bildirir.
+7. **RHI Get Current Launch Mode** — Oyun/projenin nasıl başlatıldığını ve yapı modunu belirtir.
 
 Başlatma modları:
 
@@ -116,14 +119,14 @@ Başlatma modları:
 - `"STANDALONE"`
 - `"UNKNOWN"`
 
-Derleme modları:
+Yapı modları:
 
 - `"SHIPPING"`
 - `"DEVELOPMENT"`
 - `"DEBUG"`
 - `"UNKNOWNBUILD"`
 
-Sonuç şu formatta birleşik bir string olur:
+Sonuç şu formatta döner:
 
 `PLAY_IN_EDITOR_DEVELOPMENT`, `STANDALONE_SHIPPING` vb.
 
@@ -141,7 +144,7 @@ Sonuç şu formatta birleşik bir string olur:
   <img src="../Images/GET_CURRENT_GPU_NAME.png" width="512"/> 
 </p>
 
-9. **RHI Get GPU Driver Version** — GPU sürücü versiyonunu string olarak döner (gerekirse sayıya dönüştürülebilir).
+9. **RHI Get GPU Driver Version** — GPU sürücü versiyonunu döner (gerekirse sayıya dönüştürülebilir).
 
 <p align="center">
   <img src="../Images/GET_GPU_DRIVER_VERSION.png" width="512"/> 
@@ -161,10 +164,10 @@ Sonuç şu formatta birleşik bir string olur:
   <img src="../Images/RHI_API_Tools_PLUGIN_CONTENT.png" width="512"/> 
 </p>
 
-1. Eklenti içinde şu dosyaların bulunduğu `Content` klasörü vardır:
+1. Eklenti içinde `Content` klasörü bulunur ve burada şunlar yer alır:
 
    - Örnek harita ve debug arayüzü
-   - Tüm işlevleri gösteren bir widget
+   - Tüm eklenti işlevlerini gösteren widget
 
 <p align="center">
   <img src="../Images/RHI_API_Tools_INSIDE_CONTENT.png" width="512"/> 
@@ -178,7 +181,7 @@ Bu dosyalar UE 5.4 editörü üzerinden doğrudan erişilebilir. İsterseniz pro
   <img src="../Images/INTERFACE_EXAMPLE.png" width="900"/> 
 </p>
 
-3. Widget'ın Event Graph bölümünde tüm node'lar yer alır:
+3. Widget'ın Event Graph bölümünde tüm düğümler bulunur:
 
 <p align="center">
   <img src="../Images/BLUEPRINT_EXAMPLES.png" width="512"/> 
@@ -186,4 +189,4 @@ Bu dosyalar UE 5.4 editörü üzerinden doğrudan erişilebilir. İsterseniz pro
 
 ---
 
-Sorularınız veya sorunlarınız varsa Discord sunucumuza katılın: https://discord.gg/Yb9h4XGbWN
+Herhangi bir sorunuz veya probleminiz varsa, Discord topluluğumuza katılın: https://discord.gg/Yb9h4XGbWN
