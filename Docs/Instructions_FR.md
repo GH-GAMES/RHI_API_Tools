@@ -66,6 +66,10 @@ La chaîne "Selected API" retourne un résultat au format `"DX11"`, `"DX12"` ou 
 
 La variable booléenne `"Force Use Launcher"` force l'utilisation du fichier de configuration, quel que soit le type de packaging du jeu : Debug, Developing ou Publish.
 
+Important : Pour appliquer l'API sélectionnée à votre jeu/projet, vous devez le redémarrer, car l'API dont nous avons besoin s'initialise précisément au moment du lancement, et non en mode Runtime. En mode Runtime, il est seulement possible de modifier le paramètre vers celui que nous souhaitons, mais il ne sera appliqué qu'après un redémarrage complet.
+
+P.S. Dans l'éditeur UE5 lui-même, vous ne verrez toujours que l'API spécifiée dans les paramètres du projet, car l'aperçu du jeu/projet se lance avec ce paramètre, celui-ci étant initialisé avant même le démarrage effectif.
+
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
