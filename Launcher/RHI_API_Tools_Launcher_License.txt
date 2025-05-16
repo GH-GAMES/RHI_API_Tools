@@ -1,0 +1,25 @@
+RHI_API_Tools_Launcher.exe – Part of "RHI API - Tools" Plugin  
+Copyright (c) 2025 ghostWDFR (GH Games)
+
+This executable is a helper utility included with the "RHI API - Tools" plugin for Unreal Engine 5.  
+It is not a standalone product and is intended to be used exclusively as part of the plugin.
+
+Purpose:  
+This launcher does not perform any runtime modification.  
+It simply starts another executable located in the same folder (such as the project/game binary),  
+adding a command-line parameter read from a local file named launch_parameter.txt.
+
+Usage Terms:  
+- This file must remain bundled with the plugin  
+- It may not be redistributed separately  
+- Users may use and distribute this file only within projects using the "RHI API - Tools" plugin  
+- Users are allowed to rename the executable to suit their project needs  
+- Changing the file icon is also permitted if required for branding or integration purposes
+
+Privacy Notice:  
+This utility does **not collect, transmit, or store any user data**.  
+It performs no online communication and does not interact with the system beyond launching the specified executable with parameters.
+
+No third-party libraries or code are used in this utility.
+
+All rights reserved.
