@@ -66,6 +66,10 @@ El string "Selected API" devuelve el resultado en formato `"DX11"`, `"DX12"` o `
 
 La variable booleana `"Force Use Launcher"` obliga al plugin a usar la configuración sin importar el tipo de empaquetado del juego: Debug, Developing o Publish.
 
+Importante: Para aplicar la API seleccionada a tu juego/proyecto, es necesario reiniciarlo, ya que la API que necesitamos se inicializa durante el arranque, no en modo Runtime. En el modo Runtime solo es posible cambiar el parámetro al deseado, pero este solo se aplicará después de un reinicio completo.
+
+P.D. Dentro del propio editor de UE5, siempre verás únicamente la API especificada en la configuración del proyecto, porque la vista previa del juego/proyecto se inicia con este parámetro, ya que se inicializa incluso antes del inicio real.
+
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>

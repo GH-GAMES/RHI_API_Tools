@@ -66,6 +66,10 @@ The "Selected API" string returns a result in the format `"DX11"`, `"DX12"` or `
 
 The boolean `"Force Use Launcher"` forces the plugin to use the config file regardless of the game's packaging type: Debug, Developing, or Publish.
 
+Important: To apply the selected API to your game/project, you need to restart it, as the required API is initialized during launch, not in Runtime mode. In Runtime mode, you can only change the parameter to the desired one, but it will only take effect after a full restart.
+
+P.S. Inside the UE5 editor itself, you will always see only the API specified in the project settings, because the game/project preview launches with this parameter, as it is initialized even before the actual launch.
+
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>

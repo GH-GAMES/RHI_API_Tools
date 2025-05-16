@@ -66,6 +66,10 @@ Tüm düğümler **RHI API Tools** kategorisinde bulunur.
 
 `"Force Use Launcher"` boolean değişkeni, oyun paketleme türü ne olursa olsun yapılandırma dosyasını kullanmaya zorlar: Debug, Developing veya Publish.
 
+Önemli: Seçtiğiniz API'nin oyununuzda/projenizde uygulanabilmesi için yeniden başlatmanız gerekmektedir. Çünkü ihtiyacımız olan API yalnızca başlangıç sırasında başlatılır, Runtime modunda değil. Runtime modunda yalnızca parametreyi istediğimiz şekilde değiştirebiliriz, ancak bu değişiklik yalnızca tam bir yeniden başlatma sonrasında uygulanacaktır.
+
+Not: UE5 editörü içinde yalnızca proje ayarlarında belirtilen API'yi göreceksiniz. Çünkü oyun/proje önizlemesi bu parametreyle başlatılır, zira API asıl başlangıçtan önce başlatılmış olur.
+
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>

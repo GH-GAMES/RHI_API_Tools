@@ -66,6 +66,10 @@
 
 布尔变量 `"Force Use Launcher"` 强制插件使用配置文件，无论游戏打包类型（Debug、Developing 或 Publish）。
 
+重要提示： 要将选定的API应用到您的游戏/项目中，必须重新启动。因为所需的API仅在启动时初始化，而非在Runtime模式下。在Runtime模式下只能修改参数设置，但需完全重启后才会生效。
+
+附注： 在UE5编辑器内，您将始终只能看到项目中设置的API，因为游戏/项目预览会以该参数启动——它早在实际运行前就已初始化完成。
+
 <p align="center">
   <img src="../Images/API_CHANGE.png" width="512"/> 
 </p>
